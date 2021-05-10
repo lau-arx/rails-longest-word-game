@@ -15,7 +15,12 @@ class GamesController < ApplicationController
     @url = "https://wagon-dictionary.herokuapp.com/#{@word}"
     @serialized_word = URI.open(@url).read
     @nice_word = JSON.parse(@serialized_word)
-    
+   
     @can_be_built = @array_of_letters.all? { |letter| @array_of_letters.count(letter) <= @grid.count(letter) }
   end
+
+
+  def api(word, grid)
+
+  end 
 end
