@@ -1,0 +1,11 @@
+<h1>RESULT</h1>
+
+<% if @can_be_built == true && @nice_word["found"] == true %>
+  <p><%= "Great! The word #{@word} exists" %></p>
+<% elsif @can_be_built == false %>
+  <p><%= "Your word #{@word} can be built out of #{@grid.join}" %></p>
+<% else %>
+  <p><%= "The word: '#{@word}' doesn't exist" %></p>
+<% end %>
+
+<%= link_to 'Play Again!', new_path %>
